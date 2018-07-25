@@ -17,6 +17,44 @@ namespace WalkTheDog
       public WalkTheDogForm()
       {
          InitializeComponent();
+
+         Account acct1 = new Account
+         {
+            Owner = new Owner
+            {
+               OwnerName = "Harry Heyboer",
+               Address = new Address
+               {
+                  AddLine1 = "103 Baker St",
+                  City = "Boston",
+                  State = "MA",
+                  Zip = "00897"
+               },
+               PhoneNumber = "999-122-3434"
+            },
+
+            Dogs = new List<Dog>()
+         };
+
+         Dog dog1 = new Dog
+         {
+            DogName = "Pork Chop",
+            WalkTime = 15.0,
+            FavoriteToy = "chew toy",
+            BehaviorNotes = "Often good; hates cats."
+         };
+
+         acct1.Dogs.Add(dog1);
+         accounts.Add(acct1);
+
+         comboBoxAcctName.Items.Clear();
+         comboBoxAcctName.Items.Add(new ComboBoxContents { Name = "New Account", Value = "0" });
+         for (var i = 0; i < accounts.Count; i++)
+         {
+            comboBoxAcctName.Items.Add(new ComboBoxContents{ Name = Convert.ToString(accounts[i].Owner.OwnerName), Value = Convert.ToString(i) });
+         }
+         comboBoxAcctName.ValueMember = "value";
+         comboBoxAcctName.DisplayMember = "name";
       }
 
       private void label5_Click(object sender, EventArgs e)
@@ -67,6 +105,34 @@ namespace WalkTheDog
 
       }
 
+      private void comboBoxAcctName_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         if (comboBoxAcctName.SelectedIndex.Equals(0))
+         {
+            textBoxOwnerName.Clear();
+            textBoxDogName.Clear();
+            textBoxStreetAddress.Clear();
+            textBoxCity.Clear();
+            textBoxState.Clear();
+            textBoxZip.Clear();
+            textBoxBehaviorNotes.Clear();
+            textBoxTotalTime.Clear();
+            textBoxFavoriteToy.Clear();
+         }
+         else
+         {
+            var index = comboBoxAcctName.SelectedIndex - 1;
+            textBoxOwnerName.Text = accounts[index].Owner.OwnerName;
+            textBoxDogName.Text = accounts[index].Dogs[0].DogName;
+            textBoxStreetAddress.Text = accounts[index].Owner.Address.AddLine1;
+            textBoxCity.Text = accounts[index].Owner.Address.City;
+            textBoxState.Text = accounts[index].Owner.Address.State;
+            textBoxZip.Text = accounts[index].Owner.Address.Zip;
+            textBoxBehaviorNotes.Text = accounts[index].Dogs[0].BehaviorNotes;
+            textBoxTotalTime.Text = Convert.ToString(accounts[index].Dogs[0].WalkTime);
+            textBoxFavoriteToy.Text = accounts[index].Dogs[0].FavoriteToy;
+         }
 
+      }
    }
 }

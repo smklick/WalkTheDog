@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="ComboBoxContents.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="WalkTheDogForm.cs">

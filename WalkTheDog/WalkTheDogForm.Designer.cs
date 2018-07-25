@@ -57,6 +57,7 @@
          this.buttonTotalTimeRepor = new System.Windows.Forms.Button();
          this.labelAcctName = new System.Windows.Forms.Label();
          this.comboBoxAcctName = new System.Windows.Forms.ComboBox();
+         this.labelMinutes = new System.Windows.Forms.Label();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDogLeash)).BeginInit();
          this.panelHeader.SuspendLayout();
          this.SuspendLayout();
@@ -106,7 +107,7 @@
          // 
          this.textBoxDogName.Location = new System.Drawing.Point(187, 141);
          this.textBoxDogName.Name = "textBoxDogName";
-         this.textBoxDogName.Size = new System.Drawing.Size(100, 21);
+         this.textBoxDogName.Size = new System.Drawing.Size(213, 21);
          this.textBoxDogName.TabIndex = 6;
          // 
          // labelDName
@@ -124,7 +125,7 @@
          // 
          this.textBoxOwnerName.Location = new System.Drawing.Point(187, 182);
          this.textBoxOwnerName.Name = "textBoxOwnerName";
-         this.textBoxOwnerName.Size = new System.Drawing.Size(100, 21);
+         this.textBoxOwnerName.Size = new System.Drawing.Size(213, 21);
          this.textBoxOwnerName.TabIndex = 9;
          // 
          // labelOwnerName
@@ -152,7 +153,7 @@
          // 
          this.textBoxStreetAddress.Location = new System.Drawing.Point(187, 220);
          this.textBoxStreetAddress.Name = "textBoxStreetAddress";
-         this.textBoxStreetAddress.Size = new System.Drawing.Size(100, 21);
+         this.textBoxStreetAddress.Size = new System.Drawing.Size(213, 21);
          this.textBoxStreetAddress.TabIndex = 12;
          // 
          // labelAddress
@@ -217,7 +218,7 @@
          // 
          this.textBoxFavoriteToy.Location = new System.Drawing.Point(187, 445);
          this.textBoxFavoriteToy.Name = "textBoxFavoriteToy";
-         this.textBoxFavoriteToy.Size = new System.Drawing.Size(100, 21);
+         this.textBoxFavoriteToy.Size = new System.Drawing.Size(213, 21);
          this.textBoxFavoriteToy.TabIndex = 21;
          // 
          // labelFavoriteToy
@@ -328,9 +329,21 @@
          this.comboBoxAcctName.FormattingEnabled = true;
          this.comboBoxAcctName.Location = new System.Drawing.Point(185, 99);
          this.comboBoxAcctName.Name = "comboBoxAcctName";
-         this.comboBoxAcctName.Size = new System.Drawing.Size(121, 29);
+         this.comboBoxAcctName.Size = new System.Drawing.Size(215, 29);
          this.comboBoxAcctName.TabIndex = 31;
-         this.comboBoxAcctName.Text = "Select";
+         this.comboBoxAcctName.Text = "New Account";
+         this.comboBoxAcctName.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcctName_SelectedIndexChanged);
+         // 
+         // labelMinutes
+         // 
+         this.labelMinutes.AutoSize = true;
+         this.labelMinutes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.labelMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
+         this.labelMinutes.Location = new System.Drawing.Point(293, 405);
+         this.labelMinutes.Name = "labelMinutes";
+         this.labelMinutes.Size = new System.Drawing.Size(71, 21);
+         this.labelMinutes.TabIndex = 32;
+         this.labelMinutes.Text = "Minutes";
          // 
          // WalkTheDogForm
          // 
@@ -338,6 +351,7 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
          this.ClientSize = new System.Drawing.Size(841, 554);
+         this.Controls.Add(this.labelMinutes);
          this.Controls.Add(this.comboBoxAcctName);
          this.Controls.Add(this.labelAcctName);
          this.Controls.Add(this.buttonTotalTimeRepor);
@@ -406,6 +420,7 @@
       private System.Windows.Forms.Button buttonTotalTimeRepor;
       private System.Windows.Forms.Label labelAcctName;
       private System.Windows.Forms.ComboBox comboBoxAcctName;
+      private System.Windows.Forms.Label labelMinutes;
    }
 }
 
