@@ -1,0 +1,10 @@
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\bin\Debug\WalkTheDog.exe.config
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\bin\Debug\WalkTheDog.exe
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\bin\Debug\WalkTheDog.pdb
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.Properties.Resources.resources
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.WalkTheDogForm.resources
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.csproj.GenerateResource.cache
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.exe
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.pdb
+C:\Users\Sarah\source\repos\WalkTheDog\WalkTheDog\obj\Debug\WalkTheDog.csprojResolveAssemblyReference.cache
