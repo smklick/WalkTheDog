@@ -52,12 +52,15 @@
          this.textBoxState = new System.Windows.Forms.TextBox();
          this.textBoxZip = new System.Windows.Forms.TextBox();
          this.buttonAdd = new System.Windows.Forms.Button();
-         this.buttonUpdate = new System.Windows.Forms.Button();
+         this.buttonTodayTime = new System.Windows.Forms.Button();
          this.buttonReport = new System.Windows.Forms.Button();
-         this.buttonTotalTimeRepor = new System.Windows.Forms.Button();
+         this.buttonTotalTimeReport = new System.Windows.Forms.Button();
          this.labelAcctName = new System.Windows.Forms.Label();
          this.comboBoxAcctName = new System.Windows.Forms.ComboBox();
          this.labelMinutes = new System.Windows.Forms.Label();
+         this.labelTodayTime = new System.Windows.Forms.Label();
+         this.textBoxTodayTime = new System.Windows.Forms.TextBox();
+         this.labelReport = new System.Windows.Forms.Label();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDogLeash)).BeginInit();
          this.panelHeader.SuspendLayout();
          this.SuspendLayout();
@@ -172,7 +175,7 @@
          this.textBoxBehaviorNotes.Location = new System.Drawing.Point(187, 302);
          this.textBoxBehaviorNotes.Multiline = true;
          this.textBoxBehaviorNotes.Name = "textBoxBehaviorNotes";
-         this.textBoxBehaviorNotes.Size = new System.Drawing.Size(213, 85);
+         this.textBoxBehaviorNotes.Size = new System.Drawing.Size(213, 61);
          this.textBoxBehaviorNotes.TabIndex = 15;
          // 
          // labelBehaviorNotes
@@ -188,7 +191,7 @@
          // 
          // textBoxTotalTime
          // 
-         this.textBoxTotalTime.Location = new System.Drawing.Point(187, 405);
+         this.textBoxTotalTime.Location = new System.Drawing.Point(187, 428);
          this.textBoxTotalTime.Name = "textBoxTotalTime";
          this.textBoxTotalTime.Size = new System.Drawing.Size(100, 21);
          this.textBoxTotalTime.TabIndex = 18;
@@ -198,7 +201,7 @@
          this.labelTotalTime.AutoSize = true;
          this.labelTotalTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.labelTotalTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
-         this.labelTotalTime.Location = new System.Drawing.Point(12, 405);
+         this.labelTotalTime.Location = new System.Drawing.Point(12, 428);
          this.labelTotalTime.Name = "labelTotalTime";
          this.labelTotalTime.Size = new System.Drawing.Size(93, 21);
          this.labelTotalTime.TabIndex = 16;
@@ -208,7 +211,7 @@
          // 
          this.label9.AutoSize = true;
          this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label9.Location = new System.Drawing.Point(12, 405);
+         this.label9.Location = new System.Drawing.Point(12, 428);
          this.label9.Name = "label9";
          this.label9.Size = new System.Drawing.Size(99, 21);
          this.label9.TabIndex = 17;
@@ -216,7 +219,7 @@
          // 
          // textBoxFavoriteToy
          // 
-         this.textBoxFavoriteToy.Location = new System.Drawing.Point(187, 445);
+         this.textBoxFavoriteToy.Location = new System.Drawing.Point(187, 468);
          this.textBoxFavoriteToy.Name = "textBoxFavoriteToy";
          this.textBoxFavoriteToy.Size = new System.Drawing.Size(213, 21);
          this.textBoxFavoriteToy.TabIndex = 21;
@@ -226,7 +229,7 @@
          this.labelFavoriteToy.AutoSize = true;
          this.labelFavoriteToy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.labelFavoriteToy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
-         this.labelFavoriteToy.Location = new System.Drawing.Point(12, 445);
+         this.labelFavoriteToy.Location = new System.Drawing.Point(12, 468);
          this.labelFavoriteToy.Name = "labelFavoriteToy";
          this.labelFavoriteToy.Size = new System.Drawing.Size(108, 21);
          this.labelFavoriteToy.TabIndex = 19;
@@ -236,7 +239,7 @@
          // 
          this.label11.AutoSize = true;
          this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label11.Location = new System.Drawing.Point(12, 445);
+         this.label11.Location = new System.Drawing.Point(12, 468);
          this.label11.Name = "label11";
          this.label11.Size = new System.Drawing.Size(99, 21);
          this.label11.TabIndex = 20;
@@ -276,41 +279,44 @@
          this.buttonAdd.UseVisualStyleBackColor = false;
          this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
          // 
-         // buttonUpdate
+         // buttonTodayTime
          // 
-         this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(35)))));
-         this.buttonUpdate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(223)))));
-         this.buttonUpdate.Location = new System.Drawing.Point(337, 510);
-         this.buttonUpdate.Name = "buttonUpdate";
-         this.buttonUpdate.Size = new System.Drawing.Size(75, 32);
-         this.buttonUpdate.TabIndex = 26;
-         this.buttonUpdate.Text = "Update";
-         this.buttonUpdate.UseVisualStyleBackColor = false;
+         this.buttonTodayTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(35)))));
+         this.buttonTodayTime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.buttonTodayTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(223)))));
+         this.buttonTodayTime.Location = new System.Drawing.Point(297, 384);
+         this.buttonTodayTime.Name = "buttonTodayTime";
+         this.buttonTodayTime.Size = new System.Drawing.Size(103, 27);
+         this.buttonTodayTime.TabIndex = 26;
+         this.buttonTodayTime.Text = "Add Time";
+         this.buttonTodayTime.UseVisualStyleBackColor = false;
+         this.buttonTodayTime.Click += new System.EventHandler(this.buttonTodayTime_Click);
          // 
          // buttonReport
          // 
          this.buttonReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(35)))));
          this.buttonReport.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.buttonReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(223)))));
-         this.buttonReport.Location = new System.Drawing.Point(445, 510);
+         this.buttonReport.Location = new System.Drawing.Point(393, 510);
          this.buttonReport.Name = "buttonReport";
          this.buttonReport.Size = new System.Drawing.Size(75, 32);
          this.buttonReport.TabIndex = 27;
          this.buttonReport.Text = "Report";
          this.buttonReport.UseVisualStyleBackColor = false;
+         this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
          // 
-         // buttonTotalTimeRepor
+         // buttonTotalTimeReport
          // 
-         this.buttonTotalTimeRepor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(35)))));
-         this.buttonTotalTimeRepor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.buttonTotalTimeRepor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(223)))));
-         this.buttonTotalTimeRepor.Location = new System.Drawing.Point(548, 510);
-         this.buttonTotalTimeRepor.Name = "buttonTotalTimeRepor";
-         this.buttonTotalTimeRepor.Size = new System.Drawing.Size(89, 32);
-         this.buttonTotalTimeRepor.TabIndex = 28;
-         this.buttonTotalTimeRepor.Text = "Total Time";
-         this.buttonTotalTimeRepor.UseVisualStyleBackColor = false;
+         this.buttonTotalTimeReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(35)))));
+         this.buttonTotalTimeReport.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.buttonTotalTimeReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(223)))));
+         this.buttonTotalTimeReport.Location = new System.Drawing.Point(548, 510);
+         this.buttonTotalTimeReport.Name = "buttonTotalTimeReport";
+         this.buttonTotalTimeReport.Size = new System.Drawing.Size(89, 32);
+         this.buttonTotalTimeReport.TabIndex = 28;
+         this.buttonTotalTimeReport.Text = "Total Time";
+         this.buttonTotalTimeReport.UseVisualStyleBackColor = false;
+         this.buttonTotalTimeReport.Click += new System.EventHandler(this.buttonTotalTimeRepor_Click);
          // 
          // labelAcctName
          // 
@@ -339,11 +345,38 @@
          this.labelMinutes.AutoSize = true;
          this.labelMinutes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.labelMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
-         this.labelMinutes.Location = new System.Drawing.Point(293, 405);
+         this.labelMinutes.Location = new System.Drawing.Point(293, 428);
          this.labelMinutes.Name = "labelMinutes";
          this.labelMinutes.Size = new System.Drawing.Size(71, 21);
          this.labelMinutes.TabIndex = 32;
          this.labelMinutes.Text = "Minutes";
+         // 
+         // labelTodayTime
+         // 
+         this.labelTodayTime.AutoSize = true;
+         this.labelTodayTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.labelTodayTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
+         this.labelTodayTime.Location = new System.Drawing.Point(12, 387);
+         this.labelTodayTime.Name = "labelTodayTime";
+         this.labelTodayTime.Size = new System.Drawing.Size(111, 21);
+         this.labelTodayTime.TabIndex = 33;
+         this.labelTodayTime.Text = "Today\'s Time:";
+         // 
+         // textBoxTodayTime
+         // 
+         this.textBoxTodayTime.Location = new System.Drawing.Point(187, 387);
+         this.textBoxTodayTime.Name = "textBoxTodayTime";
+         this.textBoxTodayTime.Size = new System.Drawing.Size(100, 21);
+         this.textBoxTodayTime.TabIndex = 34;
+         // 
+         // labelReport
+         // 
+         this.labelReport.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.labelReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
+         this.labelReport.Location = new System.Drawing.Point(470, 99);
+         this.labelReport.Name = "labelReport";
+         this.labelReport.Size = new System.Drawing.Size(359, 390);
+         this.labelReport.TabIndex = 35;
          // 
          // WalkTheDogForm
          // 
@@ -351,12 +384,15 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
          this.ClientSize = new System.Drawing.Size(841, 554);
+         this.Controls.Add(this.labelReport);
+         this.Controls.Add(this.textBoxTodayTime);
+         this.Controls.Add(this.labelTodayTime);
          this.Controls.Add(this.labelMinutes);
          this.Controls.Add(this.comboBoxAcctName);
          this.Controls.Add(this.labelAcctName);
-         this.Controls.Add(this.buttonTotalTimeRepor);
+         this.Controls.Add(this.buttonTotalTimeReport);
          this.Controls.Add(this.buttonReport);
-         this.Controls.Add(this.buttonUpdate);
+         this.Controls.Add(this.buttonTodayTime);
          this.Controls.Add(this.buttonAdd);
          this.Controls.Add(this.textBoxZip);
          this.Controls.Add(this.textBoxState);
@@ -415,12 +451,15 @@
       private System.Windows.Forms.TextBox textBoxState;
       private System.Windows.Forms.TextBox textBoxZip;
       private System.Windows.Forms.Button buttonAdd;
-      private System.Windows.Forms.Button buttonUpdate;
+      private System.Windows.Forms.Button buttonTodayTime;
       private System.Windows.Forms.Button buttonReport;
-      private System.Windows.Forms.Button buttonTotalTimeRepor;
+      private System.Windows.Forms.Button buttonTotalTimeReport;
       private System.Windows.Forms.Label labelAcctName;
       private System.Windows.Forms.ComboBox comboBoxAcctName;
       private System.Windows.Forms.Label labelMinutes;
+      private System.Windows.Forms.Label labelTodayTime;
+      private System.Windows.Forms.TextBox textBoxTodayTime;
+      private System.Windows.Forms.Label labelReport;
    }
 }
 

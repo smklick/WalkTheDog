@@ -18,11 +18,13 @@ namespace WalkTheDog
       {
          InitializeComponent();
 
+         buttonTodayTime.Enabled = false;
+
          Account acct1 = new Account
          {
             Owner = new Owner
             {
-               OwnerName = "Harry Heyboer",
+               OwnerName = "Sarah Klick",
                Address = new Address
                {
                   AddLine1 = "103 Baker St",
@@ -57,13 +59,13 @@ namespace WalkTheDog
          comboBoxAcctName.DisplayMember = "name";
       }
 
-      private void label5_Click(object sender, EventArgs e)
-      {
-
-      }
-
       private void buttonAdd_Click(object sender, EventArgs e)
       {
+         if (!double.TryParse(textBoxTotalTime.Text, out double totalTime))
+         {
+            totalTime = 0;
+         }
+
          Account acct = new Account()
          {
             Owner = new Owner
@@ -84,7 +86,7 @@ namespace WalkTheDog
          Dog dog1 = new Dog
          {
             DogName = textBoxDogName.Text,
-            WalkTime = Convert.ToDouble(textBoxTotalTime.Text),
+            WalkTime = totalTime,
             FavoriteToy = textBoxFavoriteToy.Text,
             BehaviorNotes = textBoxBehaviorNotes.Text
          };
@@ -103,21 +105,27 @@ namespace WalkTheDog
                 $"\nFavorite Toy: {dog1.FavoriteToy} " +
                 $"\nBehavior Notes: {dog1.BehaviorNotes}", "Congratulations!", MessageBoxButtons.OK);
 
+         comboBoxAcctName.Items.Clear();
+         comboBoxAcctName.Items.Add(new ComboBoxContents { Name = "New Account", Value = "0" });
+         for (var i = 0; i < accounts.Count; i++)
+         {
+            comboBoxAcctName.Items.Add(new ComboBoxContents { Name = Convert.ToString(accounts[i].Owner.OwnerName), Value = Convert.ToString(i) });
+         }
+         comboBoxAcctName.ValueMember = "value";
+         comboBoxAcctName.DisplayMember = "name";
+
+         clearTextBox();
+
       }
 
       private void comboBoxAcctName_SelectedIndexChanged(object sender, EventArgs e)
       {
          if (comboBoxAcctName.SelectedIndex.Equals(0))
          {
-            textBoxOwnerName.Clear();
-            textBoxDogName.Clear();
-            textBoxStreetAddress.Clear();
-            textBoxCity.Clear();
-            textBoxState.Clear();
-            textBoxZip.Clear();
-            textBoxBehaviorNotes.Clear();
-            textBoxTotalTime.Clear();
-            textBoxFavoriteToy.Clear();
+            clearTextBox();
+
+            buttonAdd.Enabled = true;
+            buttonTodayTime.Enabled = false;
          }
          else
          {
@@ -131,8 +139,77 @@ namespace WalkTheDog
             textBoxBehaviorNotes.Text = accounts[index].Dogs[0].BehaviorNotes;
             textBoxTotalTime.Text = Convert.ToString(accounts[index].Dogs[0].WalkTime);
             textBoxFavoriteToy.Text = accounts[index].Dogs[0].FavoriteToy;
+
+            buttonAdd.Enabled = false;
+            buttonTodayTime.Enabled = true;
          }
 
+      }
+
+      private void buttonTodayTime_Click(object sender, EventArgs e)
+      {
+         var index = comboBoxAcctName.SelectedIndex - 1;
+
+         if (double.TryParse(textBoxTodayTime.Text, out double todayTime))
+         {
+            accounts[index].Dogs[0].addWalkTime(todayTime);
+            textBoxTodayTime.Clear();
+            textBoxTotalTime.Clear();
+            textBoxTotalTime.Text = Convert.ToString(accounts[index].Dogs[0].WalkTime);
+         }
+         else
+         {
+            MessageBox.Show("Please enter a valid time");
+         }
+      }
+
+      private void buttonReport_Click(object sender, EventArgs e)
+      {
+         labelReport.Text = String.Empty;
+
+         var dogReport =
+            from a in accounts
+            where a.Dogs[0].DogName == textBoxDogName.Text
+            select new { oName = a.Owner.OwnerName, dName = a.Dogs[0].DogName, time = a.Dogs[0].WalkTime };
+
+         foreach ( var element in dogReport)
+         {
+            labelReport.Text = $"Owner Name:          {element.oName}\n" +
+               $"Dog Name:               {element.dName}\n" +
+               $"Total Time Walked:  {element.time} minutes";
+         }
+      }
+
+      private void buttonTotalTimeRepor_Click(object sender, EventArgs e)
+      {
+         labelReport.Text = String.Empty;
+         var sum = 0.0;
+
+         var totalReport =
+            from a in accounts
+            orderby a.Dogs[0].DogName ascending
+            select new { dName = a.Dogs[0].DogName, time = a.Dogs[0].WalkTime };
+
+         foreach (var element in totalReport)
+         {
+            labelReport.Text += $"{element.dName}:  {element.time} minutes\n";
+            sum += element.time;
+         }
+
+         labelReport.Text += $"\n\n\n\nTotal time: {sum} minutes";
+      }
+
+      private void clearTextBox()
+      {
+         textBoxOwnerName.Clear();
+         textBoxDogName.Clear();
+         textBoxStreetAddress.Clear();
+         textBoxCity.Clear();
+         textBoxState.Clear();
+         textBoxZip.Clear();
+         textBoxBehaviorNotes.Clear();
+         textBoxTotalTime.Clear();
+         textBoxFavoriteToy.Clear();
       }
    }
 }
