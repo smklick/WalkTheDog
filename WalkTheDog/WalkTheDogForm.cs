@@ -57,6 +57,8 @@ namespace WalkTheDog
          }
          comboBoxAcctName.ValueMember = "value";
          comboBoxAcctName.DisplayMember = "name";
+
+         comboBoxState.Items.Add(new List<State>());
       }
 
       private void buttonAdd_Click(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace WalkTheDog
                {
                   AddLine1 = textBoxStreetAddress.Text,
                   City = textBoxCity.Text,
-                  State = textBoxState.Text,
+                  State = comboBoxState.SelectedText,
                   Zip = textBoxZip.Text
                },
             },
@@ -94,16 +96,7 @@ namespace WalkTheDog
          acct.Dogs.Add(dog1);
          accounts.Add(acct);
 
-         MessageBox.Show($"{dog1.DogName} has been added!\n" +
-                $"Owner: {acct.Owner.OwnerName} " +
-                $"\nOwner Address: {acct.Owner.Address.AddLine1}\n\t" +
-                $"  {acct.Owner.Address.AddLine2}" +
-                $"  {acct.Owner.Address.AddLine3}" +
-                $"         {acct.Owner.Address.City}, {acct.Owner.Address.State}  {acct.Owner.Address.Zip} \n" +
-                $"Dog(s): {dog1.DogName} " +
-                $"\nWalk Time: {dog1.WalkTime} " +
-                $"\nFavorite Toy: {dog1.FavoriteToy} " +
-                $"\nBehavior Notes: {dog1.BehaviorNotes}", "Congratulations!", MessageBoxButtons.OK);
+         MessageBox.Show($"An account for {dog1.DogName} has been added!", "Congratulations!", MessageBoxButtons.OK);
 
          comboBoxAcctName.Items.Clear();
          comboBoxAcctName.Items.Add(new ComboBoxContents { Name = "New Account", Value = "0" });
@@ -134,7 +127,7 @@ namespace WalkTheDog
             textBoxDogName.Text = accounts[index].Dogs[0].DogName;
             textBoxStreetAddress.Text = accounts[index].Owner.Address.AddLine1;
             textBoxCity.Text = accounts[index].Owner.Address.City;
-            textBoxState.Text = accounts[index].Owner.Address.State;
+            comboBoxState.Text = accounts[index].Owner.Address.State;
             textBoxZip.Text = accounts[index].Owner.Address.Zip;
             textBoxBehaviorNotes.Text = accounts[index].Dogs[0].BehaviorNotes;
             textBoxTotalTime.Text = Convert.ToString(accounts[index].Dogs[0].WalkTime);
@@ -205,11 +198,15 @@ namespace WalkTheDog
          textBoxDogName.Clear();
          textBoxStreetAddress.Clear();
          textBoxCity.Clear();
-         textBoxState.Clear();
          textBoxZip.Clear();
          textBoxBehaviorNotes.Clear();
          textBoxTotalTime.Clear();
          textBoxFavoriteToy.Clear();
+      }
+
+      private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
+      {
+
       }
    }
 }

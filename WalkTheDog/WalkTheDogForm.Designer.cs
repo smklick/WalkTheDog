@@ -49,7 +49,6 @@
          this.labelFavoriteToy = new System.Windows.Forms.Label();
          this.label11 = new System.Windows.Forms.Label();
          this.textBoxCity = new System.Windows.Forms.TextBox();
-         this.textBoxState = new System.Windows.Forms.TextBox();
          this.textBoxZip = new System.Windows.Forms.TextBox();
          this.buttonAdd = new System.Windows.Forms.Button();
          this.buttonTodayTime = new System.Windows.Forms.Button();
@@ -61,6 +60,8 @@
          this.labelTodayTime = new System.Windows.Forms.Label();
          this.textBoxTodayTime = new System.Windows.Forms.TextBox();
          this.labelReport = new System.Windows.Forms.Label();
+         this.labelCityStateZip = new System.Windows.Forms.Label();
+         this.comboBoxState = new System.Windows.Forms.ComboBox();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDogLeash)).BeginInit();
          this.panelHeader.SuspendLayout();
          this.SuspendLayout();
@@ -111,7 +112,7 @@
          this.textBoxDogName.Location = new System.Drawing.Point(187, 141);
          this.textBoxDogName.Name = "textBoxDogName";
          this.textBoxDogName.Size = new System.Drawing.Size(213, 21);
-         this.textBoxDogName.TabIndex = 6;
+         this.textBoxDogName.TabIndex = 1;
          // 
          // labelDName
          // 
@@ -129,7 +130,7 @@
          this.textBoxOwnerName.Location = new System.Drawing.Point(187, 182);
          this.textBoxOwnerName.Name = "textBoxOwnerName";
          this.textBoxOwnerName.Size = new System.Drawing.Size(213, 21);
-         this.textBoxOwnerName.TabIndex = 9;
+         this.textBoxOwnerName.TabIndex = 2;
          // 
          // labelOwnerName
          // 
@@ -157,7 +158,7 @@
          this.textBoxStreetAddress.Location = new System.Drawing.Point(187, 220);
          this.textBoxStreetAddress.Name = "textBoxStreetAddress";
          this.textBoxStreetAddress.Size = new System.Drawing.Size(213, 21);
-         this.textBoxStreetAddress.TabIndex = 12;
+         this.textBoxStreetAddress.TabIndex = 3;
          // 
          // labelAddress
          // 
@@ -176,7 +177,7 @@
          this.textBoxBehaviorNotes.Multiline = true;
          this.textBoxBehaviorNotes.Name = "textBoxBehaviorNotes";
          this.textBoxBehaviorNotes.Size = new System.Drawing.Size(213, 61);
-         this.textBoxBehaviorNotes.TabIndex = 15;
+         this.textBoxBehaviorNotes.TabIndex = 7;
          // 
          // labelBehaviorNotes
          // 
@@ -194,7 +195,7 @@
          this.textBoxTotalTime.Location = new System.Drawing.Point(187, 428);
          this.textBoxTotalTime.Name = "textBoxTotalTime";
          this.textBoxTotalTime.Size = new System.Drawing.Size(100, 21);
-         this.textBoxTotalTime.TabIndex = 18;
+         this.textBoxTotalTime.TabIndex = 10;
          // 
          // labelTotalTime
          // 
@@ -222,7 +223,7 @@
          this.textBoxFavoriteToy.Location = new System.Drawing.Point(187, 468);
          this.textBoxFavoriteToy.Name = "textBoxFavoriteToy";
          this.textBoxFavoriteToy.Size = new System.Drawing.Size(213, 21);
-         this.textBoxFavoriteToy.TabIndex = 21;
+         this.textBoxFavoriteToy.TabIndex = 11;
          // 
          // labelFavoriteToy
          // 
@@ -250,21 +251,14 @@
          this.textBoxCity.Location = new System.Drawing.Point(187, 261);
          this.textBoxCity.Name = "textBoxCity";
          this.textBoxCity.Size = new System.Drawing.Size(100, 21);
-         this.textBoxCity.TabIndex = 22;
-         // 
-         // textBoxState
-         // 
-         this.textBoxState.Location = new System.Drawing.Point(293, 261);
-         this.textBoxState.Name = "textBoxState";
-         this.textBoxState.Size = new System.Drawing.Size(38, 21);
-         this.textBoxState.TabIndex = 23;
+         this.textBoxCity.TabIndex = 4;
          // 
          // textBoxZip
          // 
-         this.textBoxZip.Location = new System.Drawing.Point(337, 261);
+         this.textBoxZip.Location = new System.Drawing.Point(348, 261);
          this.textBoxZip.Name = "textBoxZip";
-         this.textBoxZip.Size = new System.Drawing.Size(63, 21);
-         this.textBoxZip.TabIndex = 24;
+         this.textBoxZip.Size = new System.Drawing.Size(52, 21);
+         this.textBoxZip.TabIndex = 6;
          // 
          // buttonAdd
          // 
@@ -274,7 +268,7 @@
          this.buttonAdd.Location = new System.Drawing.Point(229, 510);
          this.buttonAdd.Name = "buttonAdd";
          this.buttonAdd.Size = new System.Drawing.Size(77, 32);
-         this.buttonAdd.TabIndex = 25;
+         this.buttonAdd.TabIndex = 12;
          this.buttonAdd.Text = "Add";
          this.buttonAdd.UseVisualStyleBackColor = false;
          this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -287,7 +281,7 @@
          this.buttonTodayTime.Location = new System.Drawing.Point(297, 384);
          this.buttonTodayTime.Name = "buttonTodayTime";
          this.buttonTodayTime.Size = new System.Drawing.Size(103, 27);
-         this.buttonTodayTime.TabIndex = 26;
+         this.buttonTodayTime.TabIndex = 9;
          this.buttonTodayTime.Text = "Add Time";
          this.buttonTodayTime.UseVisualStyleBackColor = false;
          this.buttonTodayTime.Click += new System.EventHandler(this.buttonTodayTime_Click);
@@ -300,7 +294,7 @@
          this.buttonReport.Location = new System.Drawing.Point(393, 510);
          this.buttonReport.Name = "buttonReport";
          this.buttonReport.Size = new System.Drawing.Size(75, 32);
-         this.buttonReport.TabIndex = 27;
+         this.buttonReport.TabIndex = 13;
          this.buttonReport.Text = "Report";
          this.buttonReport.UseVisualStyleBackColor = false;
          this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
@@ -313,7 +307,7 @@
          this.buttonTotalTimeReport.Location = new System.Drawing.Point(548, 510);
          this.buttonTotalTimeReport.Name = "buttonTotalTimeReport";
          this.buttonTotalTimeReport.Size = new System.Drawing.Size(89, 32);
-         this.buttonTotalTimeReport.TabIndex = 28;
+         this.buttonTotalTimeReport.TabIndex = 14;
          this.buttonTotalTimeReport.Text = "Total Time";
          this.buttonTotalTimeReport.UseVisualStyleBackColor = false;
          this.buttonTotalTimeReport.Click += new System.EventHandler(this.buttonTotalTimeRepor_Click);
@@ -336,7 +330,7 @@
          this.comboBoxAcctName.Location = new System.Drawing.Point(185, 99);
          this.comboBoxAcctName.Name = "comboBoxAcctName";
          this.comboBoxAcctName.Size = new System.Drawing.Size(215, 29);
-         this.comboBoxAcctName.TabIndex = 31;
+         this.comboBoxAcctName.TabIndex = 0;
          this.comboBoxAcctName.Text = "New Account";
          this.comboBoxAcctName.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcctName_SelectedIndexChanged);
          // 
@@ -367,7 +361,7 @@
          this.textBoxTodayTime.Location = new System.Drawing.Point(187, 387);
          this.textBoxTodayTime.Name = "textBoxTodayTime";
          this.textBoxTodayTime.Size = new System.Drawing.Size(100, 21);
-         this.textBoxTodayTime.TabIndex = 34;
+         this.textBoxTodayTime.TabIndex = 8;
          // 
          // labelReport
          // 
@@ -378,12 +372,84 @@
          this.labelReport.Size = new System.Drawing.Size(359, 390);
          this.labelReport.TabIndex = 35;
          // 
+         // labelCityStateZip
+         // 
+         this.labelCityStateZip.AutoSize = true;
+         this.labelCityStateZip.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.labelCityStateZip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(213)))));
+         this.labelCityStateZip.Location = new System.Drawing.Point(12, 261);
+         this.labelCityStateZip.Name = "labelCityStateZip";
+         this.labelCityStateZip.Size = new System.Drawing.Size(126, 21);
+         this.labelCityStateZip.TabIndex = 36;
+         this.labelCityStateZip.Text = "City, State, Zip:";
+         // 
+         // comboBoxState
+         // 
+         this.comboBoxState.FormattingEnabled = true;
+         this.comboBoxState.Items.AddRange(new object[] {
+            "AK",
+            "AL",
+            "AR",
+            "AZ",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "IA",
+            "ID",
+            "IL",
+            "IN",
+            "KS",
+            "KY",
+            "LA",
+            "MA",
+            "MD",
+            "ME",
+            "MI",
+            "MN",
+            "MO",
+            "MS",
+            "MT",
+            "NC",
+            "ND",
+            "NE",
+            "NH",
+            "NJ",
+            "NM",
+            "NV",
+            "NY",
+            "OH",
+            "OKOR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VA",
+            "VT",
+            "WA",
+            "WI",
+            "WV",
+            "WY"});
+         this.comboBoxState.Location = new System.Drawing.Point(293, 261);
+         this.comboBoxState.Name = "comboBoxState";
+         this.comboBoxState.Size = new System.Drawing.Size(49, 24);
+         this.comboBoxState.TabIndex = 5;
+         this.comboBoxState.SelectedIndexChanged += new System.EventHandler(this.comboBoxState_SelectedIndexChanged);
+         // 
          // WalkTheDogForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
          this.ClientSize = new System.Drawing.Size(841, 554);
+         this.Controls.Add(this.comboBoxState);
+         this.Controls.Add(this.labelCityStateZip);
          this.Controls.Add(this.labelReport);
          this.Controls.Add(this.textBoxTodayTime);
          this.Controls.Add(this.labelTodayTime);
@@ -395,7 +461,6 @@
          this.Controls.Add(this.buttonTodayTime);
          this.Controls.Add(this.buttonAdd);
          this.Controls.Add(this.textBoxZip);
-         this.Controls.Add(this.textBoxState);
          this.Controls.Add(this.textBoxCity);
          this.Controls.Add(this.textBoxFavoriteToy);
          this.Controls.Add(this.labelFavoriteToy);
@@ -448,7 +513,6 @@
       private System.Windows.Forms.Label labelFavoriteToy;
       private System.Windows.Forms.Label label11;
       private System.Windows.Forms.TextBox textBoxCity;
-      private System.Windows.Forms.TextBox textBoxState;
       private System.Windows.Forms.TextBox textBoxZip;
       private System.Windows.Forms.Button buttonAdd;
       private System.Windows.Forms.Button buttonTodayTime;
@@ -460,6 +524,8 @@
       private System.Windows.Forms.Label labelTodayTime;
       private System.Windows.Forms.TextBox textBoxTodayTime;
       private System.Windows.Forms.Label labelReport;
+      private System.Windows.Forms.Label labelCityStateZip;
+      private System.Windows.Forms.ComboBox comboBoxState;
    }
 }
 
