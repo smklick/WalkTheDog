@@ -77,7 +77,7 @@ namespace WalkTheDog
                {
                   AddLine1 = textBoxStreetAddress.Text,
                   City = textBoxCity.Text,
-                  State = comboBoxState.SelectedText,
+                  State = Convert.ToString(comboBoxState.SelectedItem),
                   Zip = textBoxZip.Text
                },
             },
