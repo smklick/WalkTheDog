@@ -19,6 +19,7 @@ namespace WalkTheDog
          InitializeComponent();
 
          buttonTodayTime.Enabled = false;
+         textBoxTodayTime.Enabled = false;
 
          Account acct1 = new Account
          {
@@ -58,7 +59,6 @@ namespace WalkTheDog
          comboBoxAcctName.ValueMember = "value";
          comboBoxAcctName.DisplayMember = "name";
 
-         comboBoxState.Items.Add(new List<State>());
       }
 
       private void buttonAdd_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace WalkTheDog
          comboBoxAcctName.DisplayMember = "name";
 
          clearTextBox();
-
+         comboBoxState.SelectedIndex = 0;
       }
 
       private void comboBoxAcctName_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +119,8 @@ namespace WalkTheDog
 
             buttonAdd.Enabled = true;
             buttonTodayTime.Enabled = false;
+            textBoxTodayTime.Enabled = false;
+            comboBoxState.SelectedIndex = 0;
          }
          else
          {
@@ -135,6 +137,7 @@ namespace WalkTheDog
 
             buttonAdd.Enabled = false;
             buttonTodayTime.Enabled = true;
+            textBoxTodayTime.Enabled = true;
          }
 
       }
@@ -202,11 +205,6 @@ namespace WalkTheDog
          textBoxBehaviorNotes.Clear();
          textBoxTotalTime.Clear();
          textBoxFavoriteToy.Clear();
-      }
-
-      private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
-      {
-
       }
    }
 }

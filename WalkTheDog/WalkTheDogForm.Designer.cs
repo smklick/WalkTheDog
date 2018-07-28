@@ -387,6 +387,7 @@
          // 
          this.comboBoxState.FormattingEnabled = true;
          this.comboBoxState.Items.AddRange(new object[] {
+            "",
             "AK",
             "AL",
             "AR",
@@ -422,7 +423,8 @@
             "NV",
             "NY",
             "OH",
-            "OKOR",
+            "OK",
+            "OR",
             "PA",
             "RI",
             "SC",
@@ -440,7 +442,6 @@
          this.comboBoxState.Name = "comboBoxState";
          this.comboBoxState.Size = new System.Drawing.Size(49, 24);
          this.comboBoxState.TabIndex = 5;
-         this.comboBoxState.SelectedIndexChanged += new System.EventHandler(this.comboBoxState_SelectedIndexChanged);
          // 
          // WalkTheDogForm
          // 
