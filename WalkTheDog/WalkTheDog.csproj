@@ -50,7 +50,6 @@
     <Compile Include="ComboBoxContents.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Owner.cs" />
-    <Compile Include="State.cs" />
     <Compile Include="WalkTheDogForm.cs">
       <SubType>Form</SubType>
     </Compile>

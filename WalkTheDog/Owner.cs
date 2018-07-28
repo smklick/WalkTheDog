@@ -10,6 +10,5 @@ namespace WalkTheDog
    {
       public string OwnerName { get; set; }
       public Address Address { get; set; }
-      public string PhoneNumber { get; set; }
    }
 }

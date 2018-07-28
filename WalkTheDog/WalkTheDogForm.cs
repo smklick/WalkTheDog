@@ -33,7 +33,6 @@ namespace WalkTheDog
                   State = "MA",
                   Zip = "00897"
                },
-               PhoneNumber = "999-122-3434"
             },
 
             Dogs = new List<Dog>()
