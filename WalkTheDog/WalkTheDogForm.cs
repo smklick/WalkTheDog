@@ -120,6 +120,7 @@ namespace WalkTheDog
             buttonTodayTime.Enabled = false;
             textBoxTodayTime.Enabled = false;
             comboBoxState.SelectedIndex = 0;
+            labelReport.Text = "";
          }
          else
          {
