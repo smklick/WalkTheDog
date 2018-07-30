@@ -22,6 +22,7 @@ namespace WalkTheDog
 
          buttonTodayTime.Enabled = false;
          textBoxTodayTime.Enabled = false;
+         buttonReport.Enabled = false;
 
          Account acct1 = new Account
          {
@@ -119,6 +120,7 @@ namespace WalkTheDog
             clearTextBox();
 
             buttonAdd.Enabled = true;
+            buttonReport.Enabled = false;
             buttonTodayTime.Enabled = false;
             textBoxTodayTime.Enabled = false;
             comboBoxState.SelectedIndex = 0;
@@ -138,6 +140,7 @@ namespace WalkTheDog
             textBoxFavoriteToy.Text = accounts[index].Dogs[0].FavoriteToy;
 
             buttonAdd.Enabled = false;
+            buttonReport.Enabled = true;
             buttonTodayTime.Enabled = true;
             textBoxTodayTime.Enabled = true;
          }
